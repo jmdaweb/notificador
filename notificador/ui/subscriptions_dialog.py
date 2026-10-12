@@ -68,7 +68,6 @@ class SubscriptionDialog(wx.Dialog):
 		self.server.Bind(wx.EVT_COMBOBOX, lambda e: self.on_server_changed())
 		self.server.Bind(wx.EVT_KILL_FOCUS, lambda e: (e.Skip(), wx.CallAfter(self.on_server_changed)))
 		self.Bind(wx.EVT_BUTTON, self.on_ok, id=wx.ID_OK)
-		(self.topic if not sub else self.alias).SetFocus()
 
 	def on_server_changed(self):
 		if not self:
