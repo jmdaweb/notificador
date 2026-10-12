@@ -6,6 +6,7 @@ import webbrowser
 
 import requests
 
+from .. import net
 from ..i18n import _
 from .models import Action
 from .publisher import USER_AGENT
@@ -35,19 +36,19 @@ def open_url(url: str) -> None:
 
 def run_http(action: Action, session=None) -> str:
 	"""Ejecuta una acción HTTP (bloqueante). Devuelve un texto con el resultado."""
-	http = session or requests
 	method = (action.method or "POST").upper()
 	headers = {"User-Agent": USER_AGENT, **(action.headers or {})}
 	try:
-		response = http.request(
-			method,
-			action.url,
-			headers=headers,
-			data=action.body.encode("utf-8") if action.body else None,
-			timeout=(10, 30),
-		)
+		with net.use(session) as http:
+			response = http.request(
+				method,
+				action.url,
+				headers=headers,
+				data=action.body.encode("utf-8") if action.body else None,
+				timeout=(10, 30),
+			)
 	except requests.RequestException as exc:
-		raise ActionError(_("La petición ha fallado: {error}").format(error=exc)) from exc
+		raise ActionError(_("La petición ha fallado. {error}").format(error=net.describe_error(exc))) from exc
 	if not response.ok:
 		raise ActionError(
 			_("El servidor respondió con un error: HTTP {status} {reason}").format(

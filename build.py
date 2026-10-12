@@ -29,6 +29,10 @@ def main() -> int:
 		"--collect-data=emoji",
 		"--collect-all=wx",
 		"--hidden-import=websockets.asyncio.client",
+		# Soporte SOCKS: PySocks para requests y python-socks para websockets.
+		"--hidden-import=socks",
+		"--hidden-import=urllib3.contrib.socks",
+		"--collect-submodules=python_socks",
 		"--optimize=2",
 	]
 	locale = ROOT / "locale"

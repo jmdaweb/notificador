@@ -15,7 +15,7 @@ from urllib.parse import urlsplit
 import requests
 import wx
 
-from . import APP_NAME, i18n, paths
+from . import APP_NAME, i18n, net, paths
 from .config import Config, normalize_server
 from .formatting import toast_texts
 from .i18n import _, ngettext
@@ -88,6 +88,7 @@ class Controller:
 
 		if self.vault.exists():
 			unlock_vault(None, self.vault)
+		self.load_proxy_settings()
 
 		self.frame = MainFrame(self)
 		self.app.SetTopWindow(self.frame)
@@ -96,6 +97,7 @@ class Controller:
 			self.frame.Show()
 		self.refresh_subscriptions()
 		self.frame.update_status_counts()
+		self._warn_locked_proxy()
 		self._retention_timer = wx.Timer()
 		self._retention_timer.Bind(wx.EVT_TIMER, lambda e: self._purge())
 		self._retention_timer.Start(RETENTION_CHECK_MS)
@@ -175,6 +177,35 @@ class Controller:
 
 	def credentials_changed(self) -> None:
 		self.manager.update(self.build_endpoint_configs())
+
+	# Proxy
+
+	def load_proxy_settings(self) -> bool:
+		"""Aplica el proxy de la configuración. Devuelve True si ha cambiado respecto al actual."""
+		settings = net.ProxySettings.from_config(self.config.get("proxy"), self.vault.get_secret(net.VAULT_SECRET))
+		changed = settings != net.current()
+		net.configure(settings)
+		if changed:
+			log.info("Proxy: %s", settings.display())
+		return changed
+
+	def apply_proxy_settings(self) -> None:
+		"""Recarga el proxy y, si ha cambiado, vuelve a abrir todas las conexiones."""
+		if self.load_proxy_settings():
+			self.manager.reconnect_all()
+			self.set_status(_("Configuración del proxy aplicada. Reconectando…"))
+
+	def _proxy_password_locked(self) -> bool:
+		proxy = self.config.get("proxy") or {}
+		return (
+			proxy.get("type") in net.MANUAL_TYPES and bool(proxy.get("has_password")) and not self.vault.unlocked
+		)
+
+	def _warn_locked_proxy(self) -> None:
+		if self._proxy_password_locked():
+			self.set_status(
+				_("El proxy necesita la contraseña guardada: desbloquea las credenciales para usarla.")
+			)
 
 	def reconnect(self) -> None:
 		self.manager.update(self.build_endpoint_configs())
@@ -296,7 +327,9 @@ class Controller:
 			if cached.exists():
 				return str(cached)
 		try:
-			with requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(5, 10), stream=True) as response:
+			with net.session() as http, http.get(
+				url, headers={"User-Agent": USER_AGENT}, timeout=(5, 10), stream=True
+			) as response:
 				response.raise_for_status()
 				ctype = response.headers.get("Content-Type", "")
 				ext = ".png" if "png" in ctype else ".jpg" if ("jpeg" in ctype or "jpg" in ctype) else None
@@ -420,7 +453,7 @@ class Controller:
 
 		def worker():
 			try:
-				with requests.get(att.url, headers=headers, stream=True, timeout=(10, 120)) as response:
+				with net.session() as http, http.get(att.url, headers=headers, stream=True, timeout=(10, 120)) as response:
 					response.raise_for_status()
 					tmp = target.with_name(target.name + ".part")
 					with open(tmp, "wb") as fh:
@@ -513,7 +546,7 @@ class Controller:
 	def show_preferences(self, parent) -> None:
 		from .ui.preferences_dialog import PreferencesDialog
 
-		with PreferencesDialog(parent, self.config) as dlg:
+		with PreferencesDialog(parent, self) as dlg:
 			if dlg.ShowModal() != wx.ID_OK:
 				return
 			before = self.config.get("register_aumid")
@@ -523,6 +556,9 @@ class Controller:
 		if before != after:
 			self.register_windows(parent, after, quiet=True)
 		self._purge()
+		# El diálogo puede haber desbloqueado el almacén al guardar la contraseña del proxy.
+		self.credentials_changed()
+		self.apply_proxy_settings()
 		if i18n.resolve(self.config.get("language") or None) != language_before:
 			dlg = wx.MessageDialog(
 				parent,
@@ -553,6 +589,7 @@ class Controller:
 		if unlock_vault(parent, self.vault):
 			self.credentials_changed()
 			self.set_status(_("Credenciales desbloqueadas."))
+			self.apply_proxy_settings()
 
 	def change_master_password(self, parent) -> None:
 		from .ui.master_password_dialog import change_master_password

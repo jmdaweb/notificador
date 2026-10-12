@@ -22,6 +22,7 @@ Ejecuta `makepot.py` siempre que añadas o cambies cadenas `_()` y versiona el `
   - `publisher.py`: construcción y envío de publicaciones, límites de adjuntos (`/v1/account`, con los límites documentados como respaldo) y validación.
   - `subscriber.py`: `SubscriptionManager`. Un hilo con un bucle asyncio y una conexión por servidor que agrupa sus temas. Usa WebSocket y, si no está disponible, el flujo `/json`. Reconecta con `since`.
   - `actions.py`: ejecución de acciones `view`, `http` y `copy`.
+- `notificador/net.py`: proxy compartido por requests y websockets. Contiene `ProxySettings` (modos `system`, `none`, `http`, `https`, `socks4` y `socks5`), `configure()` y `current()`. `session()` y `use(session)` devuelven una `requests.Session` que pasa `proxies=` en cada petición, porque la documentación de requests avisa de que los proxies del entorno pueden sustituir a los de la Session. `websocket_proxy()` da el argumento `proxy` de `connect()`, y `describe_error()` convierte los fallos de conexión en mensajes legibles. El controlador carga la configuración con `load_proxy_settings()` y la aplica con `apply_proxy_settings()`, que reconecta todo si ha cambiado.
 - `notificador/storage.py`: SQLite con un `RLock`. Se usa desde varios hilos.
 - `notificador/vault.py`: credenciales por servidor, cifradas con AES-GCM y clave derivada con scrypt a partir de la contraseña maestra.
 - `notificador/config.py`: `data/config.json`. Usa `normalize_server()` para cualquier URL de servidor.
@@ -45,6 +46,14 @@ Ejecuta `makepot.py` siempre que añadas o cambies cadenas `_()` y versiona el `
 - Los errores de validación se muestran con `a11y.error(parent, mensaje, control)`, que devuelve el foco al campo erróneo.
 - No reescribas el contenido de un control que el usuario pueda estar leyendo. Por ejemplo, la ventana principal no refresca el cuadro de contenido si la notificación seleccionada no cambia.
 - Los estados importantes se comunican con texto, no solo con formato visual (por ejemplo, la columna «Estado: No leída»).
+
+## Red y proxy
+
+- Toda petición HTTP sale por `net.session()` o `net.use(session)`; no llames a `requests.get` ni a `requests.request` directamente. Toda conexión WebSocket pasa `proxy=net.websocket_proxy()`.
+- Las funciones que hacen peticiones aceptan un parámetro `session` opcional, para que las pruebas inyecten una sesión falsa.
+- SOCKS se usa siempre con resolución de nombres en el proxy (`socks4a`, `socks5h`) y con el puerto explícito: si falta, websockets usaría el 80.
+- La contraseña del proxy va en el almacén con `vault.set_secret(net.VAULT_SECRET, …)`. Las claves que empiezan por `__` son secretos y `vault.servers()` las oculta. En `config.json` solo se guarda `has_password`.
+- Dependencias: `requests[socks]` (PySocks), `python-socks[asyncio]` y `websockets>=15.0`, la primera versión con soporte de proxy en el cliente asyncio.
 
 ## Hilos
 

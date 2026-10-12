@@ -16,8 +16,9 @@ from urllib.parse import urlencode, urlsplit
 
 import requests
 from websockets.asyncio.client import connect
-from websockets.exceptions import ConnectionClosed, InvalidHandshake, InvalidStatus, InvalidURI
+from websockets.exceptions import ConnectionClosed, InvalidHandshake, InvalidProxy, InvalidStatus, InvalidURI
 
+from .. import net
 from ..config import normalize_server
 from .models import Message
 from .publisher import USER_AGENT, auth_query_value
@@ -189,7 +190,8 @@ class _Connection:
 				self._status(AUTH_ERROR, str(exc))
 				await self._sleep(AUTH_RETRY)
 				continue
-			except (InvalidURI, ValueError) as exc:
+			except (InvalidURI, InvalidProxy, ValueError, ImportError) as exc:
+				# Configuración errónea (p. ej. proxy no válido o SOCKS sin python-socks): reintentar despacio.
 				self._status(ERROR, str(exc))
 				await self._sleep(AUTH_RETRY)
 				continue
@@ -216,6 +218,7 @@ class _Connection:
 		async with connect(
 			url,
 			additional_headers=self._headers(),
+			proxy=net.websocket_proxy(),
 			user_agent_header=USER_AGENT,
 			open_timeout=20,
 			max_size=4 * 1024 * 1024,
@@ -230,7 +233,7 @@ class _Connection:
 		"""Flujo HTTP de JSON (bloqueante, se ejecuta en un hilo auxiliar)."""
 		url = self._url("json")
 		headers = {"User-Agent": USER_AGENT, **self._headers()}
-		with requests.get(url, headers=headers, stream=True, timeout=(15, RECV_TIMEOUT)) as response:
+		with net.session() as http, http.get(url, headers=headers, stream=True, timeout=(15, RECV_TIMEOUT)) as response:
 			if response.status_code in (401, 403):
 				raise _HttpAuthError(f"HTTP {response.status_code}")
 			response.raise_for_status()
@@ -256,6 +259,14 @@ class _Connection:
 
 class _HttpAuthError(Exception):
 	pass
+
+
+def _loop_exception_handler(loop, context) -> None:
+	"""Rebaja a depuración el ruido de websockets cuando un proxy cierra la conexión en el handshake."""
+	if isinstance(context.get("exception"), EOFError):
+		log.debug("Conexión cerrada durante el handshake: %s", context.get("message"))
+		return
+	loop.default_exception_handler(context)
 
 
 class SubscriptionManager:
@@ -287,6 +298,7 @@ class SubscriptionManager:
 	def _run_loop(self) -> None:
 		self._loop = asyncio.new_event_loop()
 		asyncio.set_event_loop(self._loop)
+		self._loop.set_exception_handler(_loop_exception_handler)
 		self._ready.set()
 		try:
 			self._loop.run_forever()

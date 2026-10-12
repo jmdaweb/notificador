@@ -27,6 +27,8 @@ DEFAULTS = {
 	"language": "",
 	"last_publish": {},
 	"window": {},
+	# Proxy: "system", "none", "http", "https", "socks4" o "socks5". La contraseña va en el almacén cifrado.
+	"proxy": {"type": "system", "host": "", "port": 0, "username": "", "has_password": False},
 }
 
 

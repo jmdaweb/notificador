@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 
 import requests
 
-from .. import APP_NAME, APP_VERSION
+from .. import APP_NAME, APP_VERSION, net
 from ..config import normalize_server
 from ..i18n import _
 from .models import (
@@ -143,9 +143,9 @@ def parse_account_limits(doc: dict, server: str) -> AttachmentLimits:
 def fetch_limits(server: str, auth: str | None = None, session=None) -> AttachmentLimits:
 	"""Consulta /v1/account para conocer los límites reales; si falla usa los documentados."""
 	server = normalize_server(server)
-	http = session or requests
 	try:
-		response = http.get(f"{server}/v1/account", headers=base_headers(auth), timeout=TIMEOUT)
+		with net.use(session) as http:
+			response = http.get(f"{server}/v1/account", headers=base_headers(auth), timeout=TIMEOUT)
 		if response.ok:
 			return parse_account_limits(response.json(), server)
 	except (requests.RequestException, ValueError):
@@ -365,7 +365,6 @@ class _ProgressFile:
 
 def send(http_req: HttpRequest, progress=None, cancel=None, session=None) -> Message:
 	"""Ejecuta la petición y devuelve el mensaje publicado según la respuesta del servidor."""
-	http = session or requests
 	fileobj = None
 	kwargs = {"headers": http_req.headers, "timeout": TIMEOUT}
 	try:
@@ -376,13 +375,14 @@ def send(http_req: HttpRequest, progress=None, cancel=None, session=None) -> Mes
 			kwargs["data"] = json.dumps(http_req.json_body, ensure_ascii=False).encode("utf-8")
 		else:
 			kwargs.update(params=http_req.params, data=(http_req.text_body or "").encode("utf-8"))
-		response = http.request(http_req.method, http_req.url, **kwargs)
+		with net.use(session) as http:
+			response = http.request(http_req.method, http_req.url, **kwargs)
 	except PublishCancelled:
 		raise
 	except requests.RequestException as exc:
 		if cancel is not None and cancel.is_set():
 			raise PublishCancelled() from exc
-		raise PublishError(_("No se pudo conectar con el servidor: {error}").format(error=exc)) from exc
+		raise PublishError(net.describe_error(exc)) from exc
 	finally:
 		if fileobj is not None:
 			fileobj.close()
@@ -399,12 +399,12 @@ def publish(req: PublishRequest, auth: str | None = None, progress=None, cancel=
 
 
 def _sequence_request(method, server, topic, sequence_id, suffix, auth=None, session=None) -> None:
-	http = session or requests
 	url = f"{normalize_server(server)}/{topic}/{sequence_id}{suffix}"
 	try:
-		response = http.request(method, url, headers=base_headers(auth), timeout=TIMEOUT)
+		with net.use(session) as http:
+			response = http.request(method, url, headers=base_headers(auth), timeout=TIMEOUT)
 	except requests.RequestException as exc:
-		raise PublishError(_("No se pudo conectar con el servidor: {error}").format(error=exc)) from exc
+		raise PublishError(net.describe_error(exc)) from exc
 	if not response.ok:
 		raise describe_http_error(response)
 

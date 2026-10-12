@@ -21,6 +21,8 @@ SCRYPT_N = 2 ** 15
 SCRYPT_R = 8
 SCRYPT_P = 1
 AAD = b"notificador-vault-v1"
+# Las claves que empiezan así guardan secretos que no son de un servidor.
+SECRET_PREFIX = "__"
 
 
 class VaultError(Exception):
@@ -125,7 +127,7 @@ class Vault:
 	def servers(self) -> list[str]:
 		with self._lock:
 			self._require_unlocked()
-			return sorted(self._entries)
+			return sorted(k for k in self._entries if not k.startswith(SECRET_PREFIX))
 
 	def get(self, server: str):
 		"""Devuelve la credencial del servidor o None. No falla si está bloqueado."""
@@ -151,4 +153,25 @@ class Vault:
 		with self._lock:
 			self._require_unlocked()
 			if self._entries.pop(normalize_server(server), None) is not None:
+				self._save()
+
+	# Secretos que no pertenecen a un servidor (p. ej. la contraseña del proxy)
+
+	def get_secret(self, name: str) -> str:
+		"""Devuelve el secreto o "" si no existe o el almacén está bloqueado."""
+		with self._lock:
+			if self._entries is None:
+				return ""
+			return str((self._entries.get(SECRET_PREFIX + name) or {}).get("secret", ""))
+
+	def set_secret(self, name: str, secret: str) -> None:
+		with self._lock:
+			self._require_unlocked()
+			self._entries[SECRET_PREFIX + name] = {"type": "secret", "username": "", "secret": secret}
+			self._save()
+
+	def delete_secret(self, name: str) -> None:
+		with self._lock:
+			self._require_unlocked()
+			if self._entries.pop(SECRET_PREFIX + name, None) is not None:
 				self._save()

@@ -25,6 +25,7 @@ Cliente de escritorio para Windows, accesible con lectores de pantalla (NVDA, JA
   - pulsar la notificación abre su enlace o la muestra en el programa;
   - se respeta la prioridad (ver tabla).
 - **Historial en disco** (SQLite), con búsqueda, filtro por suscripción, «solo no leídas» y retención configurable.
+- **Servidor proxy opcional** (HTTP, HTTPS, SOCKS4 o SOCKS5, con usuario y contraseña) para todas las conexiones: suscripciones, publicaciones, acciones y descargas.
 - **Portable**: todo se guarda en la carpeta `data` junto al programa.
 
 ### Prioridades en Windows
@@ -38,6 +39,24 @@ Cliente de escritorio para Windows, accesible con lectores de pantalla (NVDA, JA
 | 5 – urgente | Escenario urgente (puede saltarse «No molestar» si Windows lo permite) y sonido de alarma |
 
 En Preferencias puedes fijar una prioridad mínima para avisar, y silenciar suscripciones concretas.
+
+## Servidor proxy
+
+Se configura en *Herramientas → Preferencias → Servidor proxy*:
+
+| Tipo | Comportamiento |
+|---|---|
+| Configuración del sistema | Opción por defecto. Usa el proxy de las opciones de Internet de Windows o de las variables `HTTPS_PROXY`, `HTTP_PROXY`, `ALL_PROXY` y `NO_PROXY` |
+| Sin proxy | Conexión directa, aunque el sistema tenga un proxy configurado |
+| HTTP / HTTPS | Proxy web; con HTTPS, la conexión con el proxy también va cifrada |
+| SOCKS4 / SOCKS5 | Proxy SOCKS; los nombres de los servidores los resuelve el proxy (SOCKS4a y SOCKS5h) |
+
+- El servidor (host) es obligatorio con los tipos manuales.
+- El puerto, el usuario y la contraseña son opcionales. Si no se indica puerto, se usa 8080 para HTTP, 443 para HTTPS y 1080 para SOCKS.
+- Con SOCKS4 solo se envía el usuario, porque el protocolo no admite contraseña.
+- La contraseña del proxy se guarda en el almacén cifrado, nunca en `config.json`, así que necesita la contraseña maestra. Si al arrancar no desbloqueas las credenciales, el proxy se usa sin contraseña hasta que las desbloquees.
+- El botón «Probar proxy» comprueba la conexión con el primer servidor reciente (`/v1/health`) sin guardar los cambios.
+- Al aceptar, las conexiones abiertas se cierran y se vuelven a abrir con la nueva configuración.
 
 ## Uso con teclado
 
@@ -98,7 +117,7 @@ Todo se guarda en `data/`:
 | Archivo | Contenido |
 |---|---|
 | `config.json` | Preferencias, servidores y temas recientes |
-| `credentials.vault` | Credenciales cifradas; la contraseña maestra nunca se guarda |
+| `credentials.vault` | Credenciales cifradas (servidores y contraseña del proxy); la contraseña maestra nunca se guarda |
 | `notificador.db` | Suscripciones e historial de notificaciones |
 | `attachments/` | Adjuntos descargados |
 | `icons/` | Caché de iconos de notificación |
