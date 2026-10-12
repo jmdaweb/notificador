@@ -73,7 +73,6 @@ class PublishDialog(wx.Dialog):
 		self.on_server_changed()
 		if topic:
 			self.topic.SetValue(topic)
-		self.server.SetFocus() if not topic else self.message.SetFocus()
 
 	# Construcción de pestañas
 
