@@ -42,7 +42,7 @@ Ejecuta `makepot.py` siempre que añadas o cambies cadenas `_()` y versiona el `
 - Usa solo controles nativos de wx; nada dibujado a mano.
 - Cada control va precedido de su `wx.StaticText`, creado justo antes, porque así lo toman los lectores como nombre. Además se le asigna `SetName()`. Para formularios usa `ui/a11y.Form`, que ya lo hace.
 - Mnemónicos `&` en etiquetas y botones, sin repetir letras dentro del mismo diálogo. El orden de tabulación es el orden de creación.
-- **Foco inicial:** al abrirse un diálogo, el foco debe quedar en su primer campo. Lo normal es no llamar a `SetFocus()` en el constructor y dejar que wx enfoque el primer control. Excepción actual: `PublishDialog` va al mensaje cuando recibe un tema.
+- **Foco inicial:** al abrirse un diálogo, el foco debe quedar en su primer campo. Lo normal es no llamar a `SetFocus()` en el constructor y dejar que wx enfoque el primer control.
 - Los errores de validación se muestran con `a11y.error(parent, mensaje, control)`, que devuelve el foco al campo erróneo.
 - No reescribas el contenido de un control que el usuario pueda estar leyendo. Por ejemplo, la ventana principal no refresca el cuadro de contenido si la notificación seleccionada no cambia.
 - Los estados importantes se comunican con texto, no solo con formato visual (por ejemplo, la columna «Estado: No leída»).
