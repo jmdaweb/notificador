@@ -39,21 +39,55 @@ def system_language() -> str | None:
 	return lang or None
 
 
+def _languages(language: str | None) -> list[str] | None:
+	wanted = language or system_language()
+	return [wanted] if wanted else None
+
+
+def resolve(language: str | None = None) -> str:
+	"""Idioma efectivo para la preferencia indicada (None o "" = idioma del sistema)."""
+	found = gettext.find(DOMAIN, localedir=str(paths.locale_dir()), languages=_languages(language))
+	if found:
+		# .../locale/<idioma>/LC_MESSAGES/notificador.mo
+		return Path(found).parent.parent.name
+	return SOURCE_LANGUAGE
+
+
 def install(language: str | None = None) -> str:
 	"""Instala _() y ngettext() y devuelve el idioma efectivo (p. ej. «es_ES»)."""
 	global current_language
-	wanted = language or system_language()
-	languages = [wanted] if wanted else None
-	localedir = str(paths.locale_dir())
-	translation = gettext.translation(DOMAIN, localedir=localedir, languages=languages, fallback=True)
+	translation = gettext.translation(
+		DOMAIN, localedir=str(paths.locale_dir()), languages=_languages(language), fallback=True
+	)
 	translation.install(names=("ngettext",))
-	found = gettext.find(DOMAIN, localedir=localedir, languages=languages)
-	if found:
-		# .../locale/<idioma>/LC_MESSAGES/notificador.mo
-		current_language = Path(found).parent.parent.name
-	else:
-		current_language = SOURCE_LANGUAGE
+	current_language = resolve(language)
 	return current_language
+
+
+def available_languages() -> list[str]:
+	"""Idiomas en los que se puede mostrar el programa: el original más los catálogos instalados."""
+	codes = {SOURCE_LANGUAGE}
+	root = paths.locale_dir()
+	if root.is_dir():
+		for entry in root.iterdir():
+			if (entry / "LC_MESSAGES" / f"{DOMAIN}.mo").is_file():
+				codes.add(entry.name)
+	# Un catálogo «es» sería el mismo idioma que las cadenas originales.
+	codes.discard(SOURCE_LANGUAGE.split("_")[0])
+	return sorted(codes)
+
+
+def language_name(code: str) -> str:
+	"""Nombre del idioma en su propia lengua (p. ej. «English», «français»). Requiere la wx.App."""
+	if code == SOURCE_LANGUAGE:
+		return "Español"
+	import wx
+
+	info = wx.Locale.FindLanguageInfo(code)
+	if info is None:
+		return code
+	name = info.DescriptionNative or info.Description or code
+	return name[:1].upper() + name[1:]
 
 
 def create_wx_locale(language: str | None = None):

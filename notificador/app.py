@@ -5,6 +5,7 @@ import logging
 import logging.handlers
 import os
 import re
+import subprocess
 import sys
 import threading
 import time
@@ -516,11 +517,29 @@ class Controller:
 			if dlg.ShowModal() != wx.ID_OK:
 				return
 			before = self.config.get("register_aumid")
+			language_before = i18n.resolve(self.config.get("language") or None)
 			dlg.apply()
 		after = self.config.get("register_aumid")
 		if before != after:
 			self.register_windows(parent, after, quiet=True)
 		self._purge()
+		if i18n.resolve(self.config.get("language") or None) != language_before:
+			dlg = wx.MessageDialog(
+				parent,
+				_("El nuevo idioma se aplicará cuando se reinicie el programa. ¿Quieres reiniciarlo ahora?"),
+				_("Cambio de idioma"),
+				wx.YES_NO | wx.ICON_QUESTION,
+			)
+			dlg.SetYesNoLabels(_("&Reiniciar ahora"), _("Más &tarde"))
+			answer = dlg.ShowModal()
+			dlg.Destroy()
+			if answer == wx.ID_YES:
+				self.restart()
+
+	def restart(self) -> None:
+		"""Cierra el programa y lo vuelve a abrir (lo hace main() al salir del bucle)."""
+		self.app.restart_requested = True
+		self.exit()
 
 	def unlock_credentials(self, parent) -> None:
 		from .ui.master_password_dialog import unlock_vault
@@ -565,6 +584,8 @@ class Controller:
 
 
 class NotificadorApp(wx.App):
+	restart_requested = False
+
 	def OnInit(self):
 		self.SetAppName(APP_NAME)
 		# Antes de crear cualquier ventana, para que wx use el mismo idioma que el programa.
@@ -605,4 +626,20 @@ def main() -> int:
 	log.info("Iniciando %s (idioma: %s)", APP_NAME, language)
 	app = NotificadorApp(False)
 	app.MainLoop()
+	if app.restart_requested:
+		# Liberar el bloqueo de instancia única antes de lanzar la nueva instancia.
+		app.instance = None
+		relaunch()
 	return 0
+
+
+def relaunch() -> None:
+	if getattr(sys, "frozen", False):
+		command = [sys.executable, *sys.argv[1:]]
+	else:
+		command = [sys.executable, os.path.abspath(sys.argv[0]), *sys.argv[1:]]
+	log.info("Reiniciando: %s", command)
+	try:
+		subprocess.Popen(command, close_fds=True)
+	except OSError:
+		log.exception("No se pudo reiniciar el programa")

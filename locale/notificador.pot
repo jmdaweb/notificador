@@ -7,105 +7,121 @@ msgstr ""
 "Language: es
 "
 
-#: notificador/app.py:181
+#: notificador/app.py:182
 msgid "Reconectando…"
 msgstr ""
 
-#: notificador/app.py:198
+#: notificador/app.py:199
 msgid "Sin suscripciones activas"
 msgstr ""
 
-#: notificador/app.py:270
+#: notificador/app.py:271
 #, python-brace-format
 msgid "{n} notificación nueva"
 msgid_plural "{n} notificaciones nuevas"
 msgstr[0] ""
 msgstr[1] ""
 
-#: notificador/app.py:388
+#: notificador/app.py:389
 msgid "Copiado al portapapeles."
 msgstr ""
 
-#: notificador/app.py:390
+#: notificador/app.py:391
 msgid "No se pudo abrir el portapapeles."
 msgstr ""
 
-#: notificador/app.py:528
+#: notificador/app.py:529
+msgid "El nuevo idioma se aplicará cuando se reinicie el programa. ¿Quieres reiniciarlo ahora?"
+msgstr ""
+
+#: notificador/app.py:530
+msgid "Cambio de idioma"
+msgstr ""
+
+#: notificador/app.py:533
+msgid "&Reiniciar ahora"
+msgstr ""
+
+#: notificador/app.py:533
+msgid "Más &tarde"
+msgstr ""
+
+#: notificador/app.py:548
 msgid "Todavía no hay credenciales guardadas."
 msgstr ""
 
-#: notificador/app.py:531
+#: notificador/app.py:551
 msgid "Las credenciales ya están desbloqueadas."
 msgstr ""
 
-#: notificador/app.py:535
+#: notificador/app.py:555
 msgid "Credenciales desbloqueadas."
 msgstr ""
 
-#: notificador/app.py:541
+#: notificador/app.py:561
 msgid "Contraseña maestra actualizada."
 msgstr ""
 
-#: notificador/app.py:548
+#: notificador/app.py:568
 msgid "El programa se ha registrado en Windows."
 msgstr ""
 
-#: notificador/app.py:548
+#: notificador/app.py:568
 msgid "No se pudo registrar el programa."
 msgstr ""
 
-#: notificador/app.py:553
+#: notificador/app.py:573
 msgid "Se ha eliminado el registro de Windows."
 msgstr ""
 
-#: notificador/app.py:553
+#: notificador/app.py:573
 msgid "No se pudo eliminar el registro."
 msgstr ""
 
-#: notificador/app.py:203
+#: notificador/app.py:204
 #, python-brace-format
 msgid "Conectado a {n} de {total} servidores"
 msgstr ""
 
-#: notificador/app.py:368
+#: notificador/app.py:369
 msgid "Error en la acción"
 msgstr ""
 
-#: notificador/app.py:379 notificador/app.py:440 notificador/app.py:398 notificador/app.py:456 notificador/ui/a11y.py:116 notificador/ui/subscriptions_dialog.py:20
+#: notificador/app.py:380 notificador/app.py:441 notificador/app.py:399 notificador/app.py:458 notificador/ui/a11y.py:116 notificador/ui/subscriptions_dialog.py:20
 msgid "Error"
 msgstr ""
 
-#: notificador/app.py:404
+#: notificador/app.py:405
 msgid "El adjunto caducó y probablemente ya no esté disponible en el servidor. ¿Intentar descargarlo?"
 msgstr ""
 
-#: notificador/app.py:405
+#: notificador/app.py:406
 msgid "Adjunto caducado"
 msgstr ""
 
-#: notificador/app.py:418
+#: notificador/app.py:419
 #, python-brace-format
 msgid "Descargando {name}…"
 msgstr ""
 
-#: notificador/app.py:451
+#: notificador/app.py:453
 msgid "Adjunto descargado. ¿Abrirlo ahora?"
 msgstr ""
 
-#: notificador/app.py:451 notificador/ui/publish_dialog.py:104
+#: notificador/app.py:453 notificador/ui/publish_dialog.py:104
 msgid "Adjunto"
 msgstr ""
 
-#: notificador/app.py:352
+#: notificador/app.py:353
 msgid "Esta acción solo está disponible en Android."
 msgstr ""
 
-#: notificador/app.py:447
+#: notificador/app.py:448
 #, python-brace-format
 msgid "Adjunto descargado en {path}"
 msgstr ""
 
-#: notificador/app.py:572
+#: notificador/app.py:595
 #, python-brace-format
 msgid "No se puede escribir en la carpeta de datos:
 {path}
@@ -113,22 +129,22 @@ msgid "No se puede escribir en la carpeta de datos:
 Copia el programa a una carpeta con permisos de escritura."
 msgstr ""
 
-#: notificador/app.py:583
+#: notificador/app.py:606
 #, python-brace-format
 msgid "{name} ya se está ejecutando. Búscalo en el área de notificación."
 msgstr ""
 
-#: notificador/app.py:366
+#: notificador/app.py:367
 #, python-brace-format
 msgid "Error en «{label}»"
 msgstr ""
 
-#: notificador/app.py:439
+#: notificador/app.py:440
 #, python-brace-format
 msgid "No se pudo descargar el adjunto: {error}"
 msgstr ""
 
-#: notificador/app.py:341
+#: notificador/app.py:342
 #, python-brace-format
 msgid "Ejecutando «{label}»…"
 msgstr ""
@@ -510,7 +526,7 @@ msgstr ""
 msgid "Servidores"
 msgstr ""
 
-#: notificador/ui/credentials_dialog.py:122 notificador/ui/preferences_dialog.py:78 notificador/ui/subscriptions_dialog.py:136
+#: notificador/ui/credentials_dialog.py:122 notificador/ui/preferences_dialog.py:90 notificador/ui/subscriptions_dialog.py:136
 msgid "Servidor"
 msgstr ""
 
@@ -522,7 +538,7 @@ msgstr ""
 msgid "Origen"
 msgstr ""
 
-#: notificador/ui/credentials_dialog.py:137 notificador/ui/preferences_dialog.py:91 notificador/ui/publish_dialog.py:504 notificador/ui/subscriptions_dialog.py:151
+#: notificador/ui/credentials_dialog.py:137 notificador/ui/preferences_dialog.py:103 notificador/ui/publish_dialog.py:504 notificador/ui/subscriptions_dialog.py:151
 msgid "&Cerrar"
 msgstr ""
 
@@ -624,252 +640,252 @@ msgstr ""
 msgid "Fecha"
 msgstr ""
 
-#: notificador/ui/main_frame.py:19 notificador/ui/preferences_dialog.py:78 notificador/ui/subscriptions_dialog.py:136
+#: notificador/ui/main_frame.py:19 notificador/ui/preferences_dialog.py:90 notificador/ui/subscriptions_dialog.py:136
 msgid "Estado"
 msgstr ""
 
-#: notificador/ui/main_frame.py:85
+#: notificador/ui/main_frame.py:86
 msgid "Ver"
 msgstr ""
 
-#: notificador/ui/main_frame.py:91
+#: notificador/ui/main_frame.py:92
 msgid "Buscar"
 msgstr ""
 
-#: notificador/ui/main_frame.py:99
+#: notificador/ui/main_frame.py:100
 msgid "Notificaciones"
 msgstr ""
 
-#: notificador/ui/main_frame.py:106
+#: notificador/ui/main_frame.py:107
 msgid "Contenido"
 msgstr ""
 
-#: notificador/ui/main_frame.py:112 notificador/ui/publish_dialog.py:131 notificador/ui/publish_dialog.py:149
+#: notificador/ui/main_frame.py:113 notificador/ui/publish_dialog.py:131 notificador/ui/publish_dialog.py:149
 msgid "Acciones"
 msgstr ""
 
-#: notificador/ui/main_frame.py:154
+#: notificador/ui/main_frame.py:155
 msgid "&Publicar notificación…	Ctrl+N"
 msgstr ""
 
-#: notificador/ui/main_frame.py:157
+#: notificador/ui/main_frame.py:158
 msgid "Publicar en el tema &seleccionado…	Ctrl+Shift+N"
 msgstr ""
 
-#: notificador/ui/main_frame.py:161
+#: notificador/ui/main_frame.py:162
 msgid "&Ocultar en el área de notificación	Ctrl+H"
 msgstr ""
 
-#: notificador/ui/main_frame.py:162
+#: notificador/ui/main_frame.py:163
 msgid "&Salir	Ctrl+Q"
 msgstr ""
 
-#: notificador/ui/main_frame.py:163
+#: notificador/ui/main_frame.py:164
 msgid "&Archivo"
 msgstr ""
 
-#: notificador/ui/main_frame.py:166
+#: notificador/ui/main_frame.py:167
 msgid "Marcar como &leída	Ctrl+R"
 msgstr ""
 
-#: notificador/ui/main_frame.py:167
+#: notificador/ui/main_frame.py:168
 msgid "Marcar como &no leída	Ctrl+Shift+R"
 msgstr ""
 
-#: notificador/ui/main_frame.py:168
+#: notificador/ui/main_frame.py:169
 msgid "Marcar &todas como leídas	Ctrl+Shift+A"
 msgstr ""
 
-#: notificador/ui/main_frame.py:170
+#: notificador/ui/main_frame.py:171
 msgid "&Copiar mensaje	Ctrl+Shift+C"
 msgstr ""
 
-#: notificador/ui/main_frame.py:171
+#: notificador/ui/main_frame.py:172
 msgid "Abrir &enlace	Ctrl+L"
 msgstr ""
 
-#: notificador/ui/main_frame.py:172
+#: notificador/ui/main_frame.py:173
 msgid "&Descargar o abrir adjunto	Ctrl+D"
 msgstr ""
 
-#: notificador/ui/main_frame.py:173
+#: notificador/ui/main_frame.py:174
 msgid "&Ejecutar acción…	Ctrl+E"
 msgstr ""
 
-#: notificador/ui/main_frame.py:175
+#: notificador/ui/main_frame.py:176
 msgid "E&liminar	Del"
 msgstr ""
 
-#: notificador/ui/main_frame.py:176
+#: notificador/ui/main_frame.py:177
 msgid "&Vaciar historial de la vista actual…"
 msgstr ""
 
-#: notificador/ui/main_frame.py:178
+#: notificador/ui/main_frame.py:179
 msgid "&Buscar	Ctrl+F"
 msgstr ""
 
-#: notificador/ui/main_frame.py:179
+#: notificador/ui/main_frame.py:180
 msgid "&Reconectar	F5"
 msgstr ""
 
-#: notificador/ui/main_frame.py:180
+#: notificador/ui/main_frame.py:181
 msgid "&Notificaciones"
 msgstr ""
 
-#: notificador/ui/main_frame.py:183
+#: notificador/ui/main_frame.py:184
 msgid "&Suscripciones…	Ctrl+U"
 msgstr ""
 
-#: notificador/ui/main_frame.py:184
+#: notificador/ui/main_frame.py:185
 msgid "Ser&vidores y credenciales…	Ctrl+K"
 msgstr ""
 
-#: notificador/ui/main_frame.py:185
+#: notificador/ui/main_frame.py:186
 msgid "&Estado de las conexiones…	Ctrl+I"
 msgstr ""
 
-#: notificador/ui/main_frame.py:187
+#: notificador/ui/main_frame.py:188
 msgid "&Desbloquear credenciales…"
 msgstr ""
 
-#: notificador/ui/main_frame.py:188
+#: notificador/ui/main_frame.py:189
 msgid "Cambiar contraseña &maestra…"
 msgstr ""
 
-#: notificador/ui/main_frame.py:190
+#: notificador/ui/main_frame.py:191
 msgid "Registrar en el &centro de notificaciones de Windows"
 msgstr ""
 
-#: notificador/ui/main_frame.py:191
+#: notificador/ui/main_frame.py:192
 msgid "Eliminar el registro de &Windows"
 msgstr ""
 
-#: notificador/ui/main_frame.py:193
+#: notificador/ui/main_frame.py:194
 msgid "&Preferencias…	Ctrl+,"
 msgstr ""
 
-#: notificador/ui/main_frame.py:194
+#: notificador/ui/main_frame.py:195
 msgid "&Herramientas"
 msgstr ""
 
-#: notificador/ui/main_frame.py:197
+#: notificador/ui/main_frame.py:198
 msgid "&Abrir la carpeta de datos"
 msgstr ""
 
-#: notificador/ui/main_frame.py:198
+#: notificador/ui/main_frame.py:199
 msgid "&Acerca de…"
 msgstr ""
 
-#: notificador/ui/main_frame.py:199
+#: notificador/ui/main_frame.py:200
 msgid "A&yuda"
 msgstr ""
 
-#: notificador/ui/main_frame.py:367 notificador/ui/main_frame.py:309
+#: notificador/ui/main_frame.py:381 notificador/ui/main_frame.py:323
 msgid "Abrir &enlace"
 msgstr ""
 
-#: notificador/ui/main_frame.py:368
+#: notificador/ui/main_frame.py:382
 msgid "Descargar o abrir &adjunto"
 msgstr ""
 
-#: notificador/ui/main_frame.py:369
+#: notificador/ui/main_frame.py:383
 msgid "&Copiar mensaje"
 msgstr ""
 
-#: notificador/ui/main_frame.py:375
+#: notificador/ui/main_frame.py:389
 msgid "&Publicar en este tema…"
 msgstr ""
 
-#: notificador/ui/main_frame.py:376 notificador/ui/publish_dialog.py:136 notificador/ui/subscriptions_dialog.py:144
+#: notificador/ui/main_frame.py:390 notificador/ui/publish_dialog.py:136 notificador/ui/subscriptions_dialog.py:144
 msgid "E&liminar"
 msgstr ""
 
-#: notificador/ui/main_frame.py:397
+#: notificador/ui/main_frame.py:411
 msgid "Todas las notificaciones marcadas como leídas."
 msgstr ""
 
-#: notificador/ui/main_frame.py:413
+#: notificador/ui/main_frame.py:427
 msgid "Notificación eliminada."
 msgstr ""
 
-#: notificador/ui/main_frame.py:455
+#: notificador/ui/main_frame.py:469
 msgid "Elige la acción que quieres ejecutar:"
 msgstr ""
 
-#: notificador/ui/main_frame.py:455
+#: notificador/ui/main_frame.py:469
 msgid "Ejecutar acción"
 msgstr ""
 
-#: notificador/ui/main_frame.py:87
+#: notificador/ui/main_frame.py:88
 msgid "Solo &no leídas"
 msgstr ""
 
-#: notificador/ui/main_frame.py:208
+#: notificador/ui/main_frame.py:209
 msgid "Todas las suscripciones"
 msgstr ""
 
-#: notificador/ui/main_frame.py:285
+#: notificador/ui/main_frame.py:299
 msgid "No hay ninguna notificación seleccionada."
 msgstr ""
 
-#: notificador/ui/main_frame.py:372
+#: notificador/ui/main_frame.py:386
 msgid "Marcar como &no leída"
 msgstr ""
 
-#: notificador/ui/main_frame.py:374
+#: notificador/ui/main_frame.py:388
 msgid "Marcar como &leída"
 msgstr ""
 
-#: notificador/ui/main_frame.py:391
+#: notificador/ui/main_frame.py:405
 msgid "Marcada como leída."
 msgstr ""
 
-#: notificador/ui/main_frame.py:391
+#: notificador/ui/main_frame.py:405
 msgid "Marcada como no leída."
 msgstr ""
 
-#: notificador/ui/main_frame.py:422
+#: notificador/ui/main_frame.py:436
 msgid "Vaciar historial"
 msgstr ""
 
-#: notificador/ui/main_frame.py:452
+#: notificador/ui/main_frame.py:466
 msgid "La notificación seleccionada no tiene acciones."
 msgstr ""
 
-#: notificador/ui/main_frame.py:83
+#: notificador/ui/main_frame.py:84
 msgid "&Ver:"
 msgstr ""
 
-#: notificador/ui/main_frame.py:89
+#: notificador/ui/main_frame.py:90
 msgid "&Buscar:"
 msgstr ""
 
-#: notificador/ui/main_frame.py:97
+#: notificador/ui/main_frame.py:98
 msgid "No&tificaciones:"
 msgstr ""
 
-#: notificador/ui/main_frame.py:104
+#: notificador/ui/main_frame.py:105
 msgid "&Contenido:"
 msgstr ""
 
-#: notificador/ui/main_frame.py:241
+#: notificador/ui/main_frame.py:242
 #, python-brace-format
 msgid "{total} en la vista, {unread} sin leer"
 msgstr ""
 
-#: notificador/ui/main_frame.py:314
+#: notificador/ui/main_frame.py:328
 msgid "Abrir &adjunto"
 msgstr ""
 
-#: notificador/ui/main_frame.py:314
+#: notificador/ui/main_frame.py:328
 msgid "Descargar &adjunto"
 msgstr ""
 
-#: notificador/ui/main_frame.py:319
+#: notificador/ui/main_frame.py:333
 msgid "Co&piar mensaje"
 msgstr ""
 
-#: notificador/ui/main_frame.py:485
+#: notificador/ui/main_frame.py:499
 #, python-brace-format
 msgid "{name} {version}
 
@@ -877,17 +893,17 @@ Cliente accesible para servidores ntfy.
 Los datos se guardan en: {path}"
 msgstr ""
 
-#: notificador/ui/main_frame.py:488
+#: notificador/ui/main_frame.py:502
 #, python-brace-format
 msgid "Acerca de {name}"
 msgstr ""
 
-#: notificador/ui/main_frame.py:419
+#: notificador/ui/main_frame.py:433
 #, python-brace-format
 msgid "¿Borrar todas las notificaciones guardadas de «{view}»? Esta acción no se puede deshacer."
 msgstr ""
 
-#: notificador/ui/main_frame.py:302
+#: notificador/ui/main_frame.py:316
 #, python-brace-format
 msgid "{label} (solo Android)"
 msgstr ""
@@ -962,71 +978,80 @@ msgstr ""
 msgid "La contraseña debe tener al menos {n} caracteres."
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:20
+#: notificador/ui/preferences_dialog.py:21
 msgid "Mostrar las notificaciones en el &centro de notificaciones de Windows"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:23
+#: notificador/ui/preferences_dialog.py:24
 msgid "Incluir los &botones de acción en las notificaciones de Windows"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:26
+#: notificador/ui/preferences_dialog.py:27
 msgid "&Prioridad mínima para avisar:"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:29
+#: notificador/ui/preferences_dialog.py:30
 msgid "Marcar como &leída al seleccionar una notificación"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:32
+#: notificador/ui/preferences_dialog.py:33
 msgid "Al cerrar la ventana, seguir en el á&rea de notificación"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:34
+#: notificador/ui/preferences_dialog.py:35
 msgid "&Iniciar minimizado"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:36
+#: notificador/ui/preferences_dialog.py:37
 msgid "Registrar el programa en Windows para los botones de las notificaciones (clave en HKCU)"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:40
+#: notificador/ui/preferences_dialog.py:41
 msgid "&Borrar notificaciones con más de estos días (0 = nunca):"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:76
+#: notificador/ui/preferences_dialog.py:52
+msgid "I&dioma (se aplica al reiniciar):"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:88
 msgid "Conexiones"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:15
+#: notificador/ui/preferences_dialog.py:16
 msgid "Preferencias"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:70
+#: notificador/ui/preferences_dialog.py:82
 msgid "Estado de las conexiones"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:83
+#: notificador/ui/preferences_dialog.py:95
 msgid "&Actualizar"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:84
+#: notificador/ui/preferences_dialog.py:96
 msgid "&Reconectar todo"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:74
+#: notificador/ui/preferences_dialog.py:48
+#, python-brace-format
+msgid "Idioma del sistema ({name})"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:86
 msgid "&Conexiones:"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:78
+#: notificador/ui/preferences_dialog.py:90
 msgid "Transporte"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:78
+#: notificador/ui/preferences_dialog.py:90
 msgid "Temas"
 msgstr ""
 
-#: notificador/ui/preferences_dialog.py:78
+#: notificador/ui/preferences_dialog.py:90
 msgid "Detalle"
 msgstr ""
 

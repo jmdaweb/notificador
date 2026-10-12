@@ -126,6 +126,8 @@ Las cadenas de la interfaz están marcadas con gettext (el idioma original es el
 
 2. Tradúcela y guárdala compilada como `locale/<idioma>/LC_MESSAGES/notificador.mo`.
 
+Por defecto el programa usa el idioma de Windows si hay traducción, y si no, el español. Para elegir otro, ve a *Herramientas → Preferencias → Idioma*: allí aparecen los idiomas con traducción instalada. El cambio se aplica al reiniciar, y el programa ofrece reiniciarse en ese momento. Los textos propios de wxPython y de los diálogos se muestran en el mismo idioma.
+
 ## Pruebas
 
 ```bash

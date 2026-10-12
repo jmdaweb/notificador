@@ -4,6 +4,7 @@ import time
 
 import wx
 
+from .. import i18n
 from ..i18n import _
 from .a11y import Form, dialog_buttons
 from .publish_dialog import priority_labels
@@ -42,6 +43,16 @@ class PreferencesDialog(wx.Dialog):
 			0,
 			3650,
 		)
+		# El primer elemento ("") sigue el idioma del sistema; el resto son idiomas concretos.
+		self.languages = [""] + i18n.available_languages()
+		labels = [_("Idioma del sistema ({name})").format(name=i18n.language_name(i18n.resolve(None)))]
+		labels += [i18n.language_name(code) for code in self.languages[1:]]
+		current = config.get("language") or ""
+		self.language = form.choice(
+			_("I&dioma (se aplica al reiniciar):"),
+			labels,
+			self.languages.index(current) if current in self.languages else 0,
+		)
 		root = wx.BoxSizer(wx.VERTICAL)
 		root.Add(form.sizer, 0, wx.EXPAND | wx.ALL, 10)
 		panel.SetSizer(root)
@@ -62,6 +73,7 @@ class PreferencesDialog(wx.Dialog):
 		cfg.set("start_minimized", self.start_minimized.GetValue(), save=False)
 		cfg.set("register_aumid", self.register_aumid.GetValue(), save=False)
 		cfg.set("retention_days", self.retention.GetValue(), save=False)
+		cfg.set("language", self.languages[self.language.GetSelection()], save=False)
 		cfg.save()
 
 
