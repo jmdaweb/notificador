@@ -141,3 +141,7 @@ Las pruebas cubren:
 - la base de datos (deduplicación y sustitución por ID de secuencia);
 - las URL de suscripción con `since`;
 - la correspondencia entre prioridades y notificaciones de Windows.
+
+## Licencia
+
+Este programa es software libre: puedes redistribuirlo y modificarlo según los términos de la Licencia Pública General de GNU, versión 2, publicada por la Free Software Foundation. Consulta el archivo [LICENSE](LICENSE) para ver el texto completo.

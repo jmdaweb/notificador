@@ -567,7 +567,8 @@ class Controller:
 class NotificadorApp(wx.App):
 	def OnInit(self):
 		self.SetAppName(APP_NAME)
-		self.locale = wx.Locale(wx.LANGUAGE_DEFAULT)
+		# Antes de crear cualquier ventana, para que wx use el mismo idioma que el programa.
+		self.locale = i18n.create_wx_locale()
 		if not paths.is_data_dir_writable():
 			wx.MessageBox(
 				_("No se puede escribir en la carpeta de datos:\n{path}\n\nCopia el programa a una carpeta con permisos de escritura.").format(
@@ -595,14 +596,13 @@ def main() -> int:
 	paths.data_dir()
 	setup_logging()
 	config = Config()
-	lc, language = i18n.install(config.get("language") or None)
+	language = i18n.install(config.get("language") or None)
 	def excepthook(exc_type, value, tb):
 		log.error("Excepción no controlada", exc_info=(exc_type, value, tb))
 		sys.__excepthook__(exc_type, value, tb)
 
 	sys.excepthook = excepthook
-	log.info("Iniciando %s", APP_NAME)
+	log.info("Iniciando %s (idioma: %s)", APP_NAME, language)
 	app = NotificadorApp(False)
-	lc.Init(language)
 	app.MainLoop()
 	return 0
