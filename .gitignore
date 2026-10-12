@@ -1,0 +1,8 @@
+# Datos del usuario (configuración, credenciales cifradas, historial)
+/data/
+__pycache__/
+*.pyc
+/build/
+/dist/
+*.spec
+.pytest_cache/

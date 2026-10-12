@@ -1,0 +1,1444 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8
+"
+"Content-Transfer-Encoding: 8bit
+"
+"Language: es
+"
+
+#: notificador/app.py:181
+msgid "Reconectando…"
+msgstr ""
+
+#: notificador/app.py:198
+msgid "Sin suscripciones activas"
+msgstr ""
+
+#: notificador/app.py:270
+#, python-brace-format
+msgid "{n} notificación nueva"
+msgid_plural "{n} notificaciones nuevas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: notificador/app.py:388
+msgid "Copiado al portapapeles."
+msgstr ""
+
+#: notificador/app.py:390
+msgid "No se pudo abrir el portapapeles."
+msgstr ""
+
+#: notificador/app.py:528
+msgid "Todavía no hay credenciales guardadas."
+msgstr ""
+
+#: notificador/app.py:531
+msgid "Las credenciales ya están desbloqueadas."
+msgstr ""
+
+#: notificador/app.py:535
+msgid "Credenciales desbloqueadas."
+msgstr ""
+
+#: notificador/app.py:541
+msgid "Contraseña maestra actualizada."
+msgstr ""
+
+#: notificador/app.py:548
+msgid "El programa se ha registrado en Windows."
+msgstr ""
+
+#: notificador/app.py:548
+msgid "No se pudo registrar el programa."
+msgstr ""
+
+#: notificador/app.py:553
+msgid "Se ha eliminado el registro de Windows."
+msgstr ""
+
+#: notificador/app.py:553
+msgid "No se pudo eliminar el registro."
+msgstr ""
+
+#: notificador/app.py:203
+#, python-brace-format
+msgid "Conectado a {n} de {total} servidores"
+msgstr ""
+
+#: notificador/app.py:368
+msgid "Error en la acción"
+msgstr ""
+
+#: notificador/app.py:379 notificador/app.py:440 notificador/app.py:398 notificador/app.py:456 notificador/ui/a11y.py:116 notificador/ui/subscriptions_dialog.py:20
+msgid "Error"
+msgstr ""
+
+#: notificador/app.py:404
+msgid "El adjunto caducó y probablemente ya no esté disponible en el servidor. ¿Intentar descargarlo?"
+msgstr ""
+
+#: notificador/app.py:405
+msgid "Adjunto caducado"
+msgstr ""
+
+#: notificador/app.py:418
+#, python-brace-format
+msgid "Descargando {name}…"
+msgstr ""
+
+#: notificador/app.py:451
+msgid "Adjunto descargado. ¿Abrirlo ahora?"
+msgstr ""
+
+#: notificador/app.py:451 notificador/ui/publish_dialog.py:104
+msgid "Adjunto"
+msgstr ""
+
+#: notificador/app.py:352
+msgid "Esta acción solo está disponible en Android."
+msgstr ""
+
+#: notificador/app.py:447
+#, python-brace-format
+msgid "Adjunto descargado en {path}"
+msgstr ""
+
+#: notificador/app.py:572
+#, python-brace-format
+msgid "No se puede escribir en la carpeta de datos:
+{path}
+
+Copia el programa a una carpeta con permisos de escritura."
+msgstr ""
+
+#: notificador/app.py:583
+#, python-brace-format
+msgid "{name} ya se está ejecutando. Búscalo en el área de notificación."
+msgstr ""
+
+#: notificador/app.py:366
+#, python-brace-format
+msgid "Error en «{label}»"
+msgstr ""
+
+#: notificador/app.py:439
+#, python-brace-format
+msgid "No se pudo descargar el adjunto: {error}"
+msgstr ""
+
+#: notificador/app.py:341
+#, python-brace-format
+msgid "Ejecutando «{label}»…"
+msgstr ""
+
+#: notificador/formatting.py:22 notificador/formatting.py:19
+msgid "Normal"
+msgstr ""
+
+#: notificador/formatting.py:77
+msgid "Leída"
+msgstr ""
+
+#: notificador/formatting.py:77
+msgid "No leída"
+msgstr ""
+
+#: notificador/formatting.py:87
+msgid "(sin mensaje)"
+msgstr ""
+
+#: notificador/formatting.py:102
+msgid "Formato: Markdown"
+msgstr ""
+
+#: notificador/formatting.py:17
+msgid "Mínima"
+msgstr ""
+
+#: notificador/formatting.py:18
+msgid "Baja"
+msgstr ""
+
+#: notificador/formatting.py:20
+msgid "Alta"
+msgstr ""
+
+#: notificador/formatting.py:21
+msgid "Urgente"
+msgstr ""
+
+#: notificador/formatting.py:89
+#, python-brace-format
+msgid "Tema: {topic}"
+msgstr ""
+
+#: notificador/formatting.py:90
+#, python-brace-format
+msgid "Servidor: {server}"
+msgstr ""
+
+#: notificador/formatting.py:91
+#, python-brace-format
+msgid "Fecha: {date}"
+msgstr ""
+
+#: notificador/formatting.py:92
+#, python-brace-format
+msgid "Prioridad: {name} ({n})"
+msgstr ""
+
+#: notificador/formatting.py:105
+msgid "adjunto"
+msgstr ""
+
+#: notificador/formatting.py:123
+#, python-brace-format
+msgid "ID: {id}"
+msgstr ""
+
+#: notificador/formatting.py:132
+#, python-brace-format
+msgid "Adjunto: {name}"
+msgstr ""
+
+#: notificador/formatting.py:98
+#, python-brace-format
+msgid "Etiquetas: {tags}"
+msgstr ""
+
+#: notificador/formatting.py:100
+#, python-brace-format
+msgid "Enlace: {url}"
+msgstr ""
+
+#: notificador/formatting.py:110
+#, python-brace-format
+msgid "Adjunto: {info}"
+msgstr ""
+
+#: notificador/formatting.py:120
+#, python-brace-format
+msgid "Acciones: {labels}"
+msgstr ""
+
+#: notificador/formatting.py:122
+#, python-brace-format
+msgid "ID de secuencia: {id}"
+msgstr ""
+
+#: notificador/formatting.py:132
+msgid "archivo"
+msgstr ""
+
+#: notificador/formatting.py:113
+#, python-brace-format
+msgid "El adjunto caduca: {date}"
+msgstr ""
+
+#: notificador/formatting.py:118
+#, python-brace-format
+msgid "Descargado en: {path}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:69
+msgid "Difusión de Android (no disponible en Windows)"
+msgstr ""
+
+#: notificador/ntfy/actions.py:26
+msgid "La acción no tiene URL."
+msgstr ""
+
+#: notificador/ntfy/actions.py:57
+#, python-brace-format
+msgid "Acción completada: HTTP {status} {reason}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:63
+#, python-brace-format
+msgid "Abre {url}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:65
+#, python-brace-format
+msgid "Envía una petición {method} a {url}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:67
+#, python-brace-format
+msgid "Copia al portapapeles: {value}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:53
+#, python-brace-format
+msgid "El servidor respondió con un error: HTTP {status} {reason}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:33
+#, python-brace-format
+msgid "No se pudo abrir «{url}»: {error}"
+msgstr ""
+
+#: notificador/ntfy/actions.py:50
+#, python-brace-format
+msgid "La petición ha fallado: {error}"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:92
+msgid "Petición incorrecta"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:93
+msgid "Se requiere autenticación o las credenciales no son válidas"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:94
+msgid "No tienes permiso para acceder a este tema"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:95
+msgid "No encontrado"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:96
+msgid "El mensaje o el adjunto es demasiado grande"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:97
+msgid "Se han superado los límites del servidor; inténtalo más tarde"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:98
+msgid "El servidor no tiene espacio para más adjuntos"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:100
+msgid "Error del servidor"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:176
+msgid "No se ha indicado ningún archivo."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:178
+msgid "El archivo no existe."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:186
+msgid "El archivo está vacío."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:188
+msgid "El servidor no admite adjuntos."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:190
+#, python-brace-format
+msgid "El archivo ocupa {size} y el límite del servidor es {limit} por archivo."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:194
+#, python-brace-format
+msgid "El archivo ocupa {size} y solo quedan {remaining} de cuota de adjuntos."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:205 notificador/ui/credentials_dialog.py:102 notificador/ui/subscriptions_dialog.py:89
+msgid "Indica un servidor."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:212 notificador/ui/subscriptions_dialog.py:94
+msgid "El tema debe tener entre 1 y 64 caracteres: letras, números, guiones o guiones bajos."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:215
+msgid "El título no puede superar 1 KB."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:217
+msgid "Las etiquetas no pueden superar 512 bytes en total."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:219
+msgid "La prioridad debe estar entre 1 y 5."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:221
+msgid "Se admiten como máximo 3 acciones."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:226
+msgid "Elige un archivo local o una URL externa, no ambos."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:228
+msgid "Plantilla desconocida."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:230
+msgid "No se puede usar una plantilla al adjuntar un archivo local."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:184
+#, python-brace-format
+msgid "No se puede leer el archivo: {error}"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:209
+msgid "La dirección del servidor no es válida."
+msgstr ""
+
+#: notificador/ntfy/publisher.py:385 notificador/ntfy/publisher.py:407
+#, python-brace-format
+msgid "No se pudo conectar con el servidor: {error}"
+msgstr ""
+
+#: notificador/ntfy/publisher.py:224
+#, python-brace-format
+msgid "La acción «{label}» está incompleta."
+msgstr ""
+
+#: notificador/ui/a11y.py:140 notificador/ui/subscriptions_dialog.py:247
+msgid "Cancelar"
+msgstr ""
+
+#: notificador/ui/a11y.py:124
+msgid "Información"
+msgstr ""
+
+#: notificador/ui/a11y.py:138 notificador/ui/master_password_dialog.py:43
+msgid "Aceptar"
+msgstr ""
+
+#: notificador/ui/a11y.py:130
+msgid "Confirmar"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:14
+msgid "Abrir URL o aplicación (view)"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:15
+msgid "Enviar petición HTTP (http)"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:16
+msgid "Difusión de Android (broadcast)"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:17
+msgid "Copiar al portapapeles (copy)"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:42
+msgid "&Tipo:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:43
+msgid "&Etiqueta del botón:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:44
+msgid "&URL:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:45
+msgid "&Descartar la notificación al pulsar"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:46
+msgid "&Método HTTP:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:47
+msgid "&Cabeceras (una por línea, Clave: valor):"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:48
+msgid "Cuer&po de la petición:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:49
+msgid "&Intent de Android:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:50
+msgid "E&xtras (una por línea, clave=valor):"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:51
+msgid "&Valor a copiar:"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:38
+msgid "Acción"
+msgstr ""
+
+#: notificador/ui/action_dialog.py:113
+msgid "Escribe la etiqueta del botón."
+msgstr ""
+
+#: notificador/ui/action_dialog.py:115
+msgid "Esta acción necesita una URL."
+msgstr ""
+
+#: notificador/ui/action_dialog.py:117
+msgid "Escribe el valor que se copiará."
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:20
+msgid "&Autenticación:"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:22
+msgid "&Usuario:"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:23
+msgid "Con&traseña:"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:24
+msgid "To&ken:"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:81 notificador/ui/publish_dialog.py:91 notificador/ui/subscriptions_dialog.py:34
+msgid "&Servidor:"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:121
+msgid "Servidores"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:122 notificador/ui/preferences_dialog.py:78 notificador/ui/subscriptions_dialog.py:136
+msgid "Servidor"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:123 notificador/ui/publish_dialog.py:201
+msgid "Autenticación"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:124
+msgid "Origen"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:137 notificador/ui/preferences_dialog.py:91 notificador/ui/publish_dialog.py:504 notificador/ui/subscriptions_dialog.py:151
+msgid "&Cerrar"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:20 notificador/ui/credentials_dialog.py:164 notificador/ui/publish_dialog.py:170
+msgid "Ninguna"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:20
+msgid "Usuario y contraseña"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:20
+msgid "Token de acceso"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:25
+msgid "&Guardar credenciales para este servidor"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:66
+msgid "Escribe el nombre de usuario."
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:68
+msgid "Escribe el token de acceso."
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:78
+msgid "Credenciales del servidor"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:115
+msgid "Servidores y credenciales"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:127
+msgid "&Añadir credenciales…"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:128
+msgid "&Editar credenciales…"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:129
+msgid "&Borrar credenciales"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:130
+msgid "&Quitar de recientes"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:119
+msgid "&Servidores:"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:164
+msgid "Bloqueadas"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:166
+msgid "Token"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:171
+msgid "reciente"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:173
+msgid "suscrito"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:168
+#, python-brace-format
+msgid "Usuario: {user}"
+msgstr ""
+
+#: notificador/ui/credentials_dialog.py:221
+#, python-brace-format
+msgid "¿Borrar las credenciales guardadas de {server}?"
+msgstr ""
+
+#: notificador/ui/main_frame.py:14
+msgid "Título"
+msgstr ""
+
+#: notificador/ui/main_frame.py:15
+msgid "Mensaje"
+msgstr ""
+
+#: notificador/ui/main_frame.py:16
+msgid "Prioridad"
+msgstr ""
+
+#: notificador/ui/main_frame.py:17 notificador/ui/subscriptions_dialog.py:136
+msgid "Tema"
+msgstr ""
+
+#: notificador/ui/main_frame.py:18
+msgid "Fecha"
+msgstr ""
+
+#: notificador/ui/main_frame.py:19 notificador/ui/preferences_dialog.py:78 notificador/ui/subscriptions_dialog.py:136
+msgid "Estado"
+msgstr ""
+
+#: notificador/ui/main_frame.py:85
+msgid "Ver"
+msgstr ""
+
+#: notificador/ui/main_frame.py:91
+msgid "Buscar"
+msgstr ""
+
+#: notificador/ui/main_frame.py:99
+msgid "Notificaciones"
+msgstr ""
+
+#: notificador/ui/main_frame.py:106
+msgid "Contenido"
+msgstr ""
+
+#: notificador/ui/main_frame.py:112 notificador/ui/publish_dialog.py:131 notificador/ui/publish_dialog.py:149
+msgid "Acciones"
+msgstr ""
+
+#: notificador/ui/main_frame.py:154
+msgid "&Publicar notificación…	Ctrl+N"
+msgstr ""
+
+#: notificador/ui/main_frame.py:157
+msgid "Publicar en el tema &seleccionado…	Ctrl+Shift+N"
+msgstr ""
+
+#: notificador/ui/main_frame.py:161
+msgid "&Ocultar en el área de notificación	Ctrl+H"
+msgstr ""
+
+#: notificador/ui/main_frame.py:162
+msgid "&Salir	Ctrl+Q"
+msgstr ""
+
+#: notificador/ui/main_frame.py:163
+msgid "&Archivo"
+msgstr ""
+
+#: notificador/ui/main_frame.py:166
+msgid "Marcar como &leída	Ctrl+R"
+msgstr ""
+
+#: notificador/ui/main_frame.py:167
+msgid "Marcar como &no leída	Ctrl+Shift+R"
+msgstr ""
+
+#: notificador/ui/main_frame.py:168
+msgid "Marcar &todas como leídas	Ctrl+Shift+A"
+msgstr ""
+
+#: notificador/ui/main_frame.py:170
+msgid "&Copiar mensaje	Ctrl+Shift+C"
+msgstr ""
+
+#: notificador/ui/main_frame.py:171
+msgid "Abrir &enlace	Ctrl+L"
+msgstr ""
+
+#: notificador/ui/main_frame.py:172
+msgid "&Descargar o abrir adjunto	Ctrl+D"
+msgstr ""
+
+#: notificador/ui/main_frame.py:173
+msgid "&Ejecutar acción…	Ctrl+E"
+msgstr ""
+
+#: notificador/ui/main_frame.py:175
+msgid "E&liminar	Del"
+msgstr ""
+
+#: notificador/ui/main_frame.py:176
+msgid "&Vaciar historial de la vista actual…"
+msgstr ""
+
+#: notificador/ui/main_frame.py:178
+msgid "&Buscar	Ctrl+F"
+msgstr ""
+
+#: notificador/ui/main_frame.py:179
+msgid "&Reconectar	F5"
+msgstr ""
+
+#: notificador/ui/main_frame.py:180
+msgid "&Notificaciones"
+msgstr ""
+
+#: notificador/ui/main_frame.py:183
+msgid "&Suscripciones…	Ctrl+U"
+msgstr ""
+
+#: notificador/ui/main_frame.py:184
+msgid "Ser&vidores y credenciales…	Ctrl+K"
+msgstr ""
+
+#: notificador/ui/main_frame.py:185
+msgid "&Estado de las conexiones…	Ctrl+I"
+msgstr ""
+
+#: notificador/ui/main_frame.py:187
+msgid "&Desbloquear credenciales…"
+msgstr ""
+
+#: notificador/ui/main_frame.py:188
+msgid "Cambiar contraseña &maestra…"
+msgstr ""
+
+#: notificador/ui/main_frame.py:190
+msgid "Registrar en el &centro de notificaciones de Windows"
+msgstr ""
+
+#: notificador/ui/main_frame.py:191
+msgid "Eliminar el registro de &Windows"
+msgstr ""
+
+#: notificador/ui/main_frame.py:193
+msgid "&Preferencias…	Ctrl+,"
+msgstr ""
+
+#: notificador/ui/main_frame.py:194
+msgid "&Herramientas"
+msgstr ""
+
+#: notificador/ui/main_frame.py:197
+msgid "&Abrir la carpeta de datos"
+msgstr ""
+
+#: notificador/ui/main_frame.py:198
+msgid "&Acerca de…"
+msgstr ""
+
+#: notificador/ui/main_frame.py:199
+msgid "A&yuda"
+msgstr ""
+
+#: notificador/ui/main_frame.py:367 notificador/ui/main_frame.py:309
+msgid "Abrir &enlace"
+msgstr ""
+
+#: notificador/ui/main_frame.py:368
+msgid "Descargar o abrir &adjunto"
+msgstr ""
+
+#: notificador/ui/main_frame.py:369
+msgid "&Copiar mensaje"
+msgstr ""
+
+#: notificador/ui/main_frame.py:375
+msgid "&Publicar en este tema…"
+msgstr ""
+
+#: notificador/ui/main_frame.py:376 notificador/ui/publish_dialog.py:136 notificador/ui/subscriptions_dialog.py:144
+msgid "E&liminar"
+msgstr ""
+
+#: notificador/ui/main_frame.py:397
+msgid "Todas las notificaciones marcadas como leídas."
+msgstr ""
+
+#: notificador/ui/main_frame.py:413
+msgid "Notificación eliminada."
+msgstr ""
+
+#: notificador/ui/main_frame.py:455
+msgid "Elige la acción que quieres ejecutar:"
+msgstr ""
+
+#: notificador/ui/main_frame.py:455
+msgid "Ejecutar acción"
+msgstr ""
+
+#: notificador/ui/main_frame.py:87
+msgid "Solo &no leídas"
+msgstr ""
+
+#: notificador/ui/main_frame.py:208
+msgid "Todas las suscripciones"
+msgstr ""
+
+#: notificador/ui/main_frame.py:285
+msgid "No hay ninguna notificación seleccionada."
+msgstr ""
+
+#: notificador/ui/main_frame.py:372
+msgid "Marcar como &no leída"
+msgstr ""
+
+#: notificador/ui/main_frame.py:374
+msgid "Marcar como &leída"
+msgstr ""
+
+#: notificador/ui/main_frame.py:391
+msgid "Marcada como leída."
+msgstr ""
+
+#: notificador/ui/main_frame.py:391
+msgid "Marcada como no leída."
+msgstr ""
+
+#: notificador/ui/main_frame.py:422
+msgid "Vaciar historial"
+msgstr ""
+
+#: notificador/ui/main_frame.py:452
+msgid "La notificación seleccionada no tiene acciones."
+msgstr ""
+
+#: notificador/ui/main_frame.py:83
+msgid "&Ver:"
+msgstr ""
+
+#: notificador/ui/main_frame.py:89
+msgid "&Buscar:"
+msgstr ""
+
+#: notificador/ui/main_frame.py:97
+msgid "No&tificaciones:"
+msgstr ""
+
+#: notificador/ui/main_frame.py:104
+msgid "&Contenido:"
+msgstr ""
+
+#: notificador/ui/main_frame.py:241
+#, python-brace-format
+msgid "{total} en la vista, {unread} sin leer"
+msgstr ""
+
+#: notificador/ui/main_frame.py:314
+msgid "Abrir &adjunto"
+msgstr ""
+
+#: notificador/ui/main_frame.py:314
+msgid "Descargar &adjunto"
+msgstr ""
+
+#: notificador/ui/main_frame.py:319
+msgid "Co&piar mensaje"
+msgstr ""
+
+#: notificador/ui/main_frame.py:485
+#, python-brace-format
+msgid "{name} {version}
+
+Cliente accesible para servidores ntfy.
+Los datos se guardan en: {path}"
+msgstr ""
+
+#: notificador/ui/main_frame.py:488
+#, python-brace-format
+msgid "Acerca de {name}"
+msgstr ""
+
+#: notificador/ui/main_frame.py:419
+#, python-brace-format
+msgid "¿Borrar todas las notificaciones guardadas de «{view}»? Esta acción no se puede deshacer."
+msgstr ""
+
+#: notificador/ui/main_frame.py:302
+#, python-brace-format
+msgid "{label} (solo Android)"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:74
+msgid "Las credenciales guardadas están cifradas. Escribe la contraseña maestra para usarlas."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:101
+msgid "Para guardar credenciales se cifrarán con una contraseña maestra. Se pedirá al iniciar el programa. Si la olvidas, tendrás que volver a introducir las credenciales."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:91
+msgid "No se ha podido desbloquear el almacén de credenciales."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:17
+msgid "Crear contraseña maestra"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:18
+msgid "Desbloquear credenciales"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:19
+msgid "Cambiar contraseña maestra"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:34
+msgid "&Contraseña maestra:"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:34
+msgid "&Nueva contraseña:"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:43
+msgid "&Desbloquear"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:33
+msgid "Contraseña &actual:"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:37
+msgid "&Repetir contraseña:"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:46
+msgid "&Omitir"
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:130
+msgid "La contraseña actual no es correcta."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:62
+msgid "Las contraseñas no coinciden."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:65
+msgid "Escribe la contraseña."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:85
+#, python-brace-format
+msgid "Contraseña incorrecta. Intentos restantes: {n}."
+msgstr ""
+
+#: notificador/ui/master_password_dialog.py:59
+#, python-brace-format
+msgid "La contraseña debe tener al menos {n} caracteres."
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:20
+msgid "Mostrar las notificaciones en el &centro de notificaciones de Windows"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:23
+msgid "Incluir los &botones de acción en las notificaciones de Windows"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:26
+msgid "&Prioridad mínima para avisar:"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:29
+msgid "Marcar como &leída al seleccionar una notificación"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:32
+msgid "Al cerrar la ventana, seguir en el á&rea de notificación"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:34
+msgid "&Iniciar minimizado"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:36
+msgid "Registrar el programa en Windows para los botones de las notificaciones (clave en HKCU)"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:40
+msgid "&Borrar notificaciones con más de estos días (0 = nunca):"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:76
+msgid "Conexiones"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:15
+msgid "Preferencias"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:70
+msgid "Estado de las conexiones"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:83
+msgid "&Actualizar"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:84
+msgid "&Reconectar todo"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:74
+msgid "&Conexiones:"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:78
+msgid "Transporte"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:78
+msgid "Temas"
+msgstr ""
+
+#: notificador/ui/preferences_dialog.py:78
+msgid "Detalle"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:19
+msgid "1 - Mínima"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:20
+msgid "2 - Baja"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:21
+msgid "3 - Normal"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:22
+msgid "4 - Alta"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:23
+msgid "5 - Urgente"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:46
+msgid "Secciones"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:55
+msgid "&Enviar"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:57
+msgid "Cerrar"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:90
+msgid "General"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:92 notificador/ui/subscriptions_dialog.py:35
+msgid "&Tema:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:93
+msgid "Tít&ulo:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:94
+msgid "&Mensaje:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:95
+msgid "El mensaje usa formato Mar&kdown"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:96
+msgid "&Prioridad:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:97
+msgid "E&tiquetas (separadas por comas):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:98
+msgid "URL al pulsar la notificación (c&lic):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:99
+msgid "URL del &icono (JPEG o PNG):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:114
+msgid "&Archivo:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:118
+msgid "&URL del adjunto:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:119
+msgid "&Nombre del archivo mostrado:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:120
+msgid "Información:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:160
+msgid "Entrega"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:162
+msgid "&Programar entrega (vacío = inmediata):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:164
+msgid "&Zona horaria para la programación:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:165
+msgid "Reenviar por correo &electrónico a:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:166
+msgid "&Llamada telefónica a (número con prefijo o «yes»):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:167
+msgid "&ID de secuencia (para actualizar una notificación):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:169
+msgid "Pla&ntilla:"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:172
+msgid "No guardar en la &caché del servidor"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:173
+msgid "No reenviar a &Firebase"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:174
+msgid "Mensaje &UnifiedPush"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:500
+msgid "La notificación se ha publicado correctamente. ¿Quieres enviar otra?"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:501
+msgid "Publicada"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:504
+msgid "Enviar &otra"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:535
+msgid "Operación enviada correctamente."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:35
+msgid "Publicar notificación"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:107
+msgid "Tipo de adjunto"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:134 notificador/ui/subscriptions_dialog.py:141
+msgid "&Añadir…"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:135 notificador/ui/subscriptions_dialog.py:142
+msgid "&Editar…"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:137
+msgid "S&ubir"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:138
+msgid "&Bajar"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:162
+msgid "30m, 2h, tomorrow 10am, 1735689600…"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:170
+msgid "Plantilla en línea (yes)"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:177
+msgid "La entrega puede programarse entre 10 segundos y 3 días. Con el ID de secuencia se puede actualizar, marcar como leída o eliminar una notificación ya enviada."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:185
+msgid "Marcar como lei&da en los clientes"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:186
+msgid "Eliminar de los clien&tes"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:229
+msgid "Se usan las credenciales guardadas para este servidor."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:247
+msgid "Elegir archivo para adjuntar"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:277
+#, python-brace-format
+msgid "límite {size} por archivo"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:279
+msgid "(documentado)"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:440
+msgid "Enviando adjunto"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:519
+msgid "Escribe el ID de secuencia de la notificación."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:108
+msgid "Ninguno"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:108
+msgid "Archivo local"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:108
+msgid "URL externa"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:129
+msgid "Acci&ones (máximo 3):"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:231
+msgid "Hay credenciales guardadas, pero el almacén está bloqueado."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:406
+msgid "Elige el archivo que quieres adjuntar."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:408
+msgid "Escribe la URL del adjunto."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:426
+msgid "El mensaje supera 4096 bytes y el servidor lo convertirá en un archivo adjunto. ¿Enviar igualmente?"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:481
+msgid "Envío cancelado."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:116
+msgid "E&xaminar…"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:283
+#, python-brace-format
+msgid "Tamaño {size}; {limit}."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:441
+#, python-brace-format
+msgid "Subiendo {name}…"
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:489
+#, python-brace-format
+msgid "Notificación publicada en {topic}."
+msgstr ""
+
+#: notificador/ui/publish_dialog.py:484
+#, python-brace-format
+msgid "No se pudo publicar la notificación.
+
+{error}"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:36
+msgid "&Nombre para mostrar (opcional):"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:37
+msgid "Suscripción &activa"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:38
+msgid "Mostrar en el centro de &notificaciones de Windows"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:40
+msgid "Al suscribirse, &recibir:"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:134 notificador/ui/subscriptions_dialog.py:128
+msgid "Suscripciones"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:244
+msgid "Eliminar suscripción"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:247
+msgid "Eliminar y &borrar historial"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:247
+msgid "Eliminar y &conservar historial"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:17
+msgid "Conectando"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:18
+msgid "Conectado"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:19
+msgid "Reconectando"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:21
+msgid "Error de autenticación"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:22
+msgid "Detenido"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:23
+msgid "Sin conexión"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:41
+msgid "Solo las nuevas"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:41
+msgid "Las de las últimas 12 horas"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:41
+msgid "Todas las disponibles en el servidor"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:100
+msgid "Ya estás suscrito a ese tema en ese servidor."
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:143 notificador/ui/subscriptions_dialog.py:195
+msgid "&Desactivar"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:177
+msgid "Desactivada"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:195
+msgid "&Activar"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:29
+msgid "Editar suscripción"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:29
+msgid "Nueva suscripción"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:132
+msgid "&Suscripciones:"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:136
+msgid "Nombre"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:136
+msgid "Avisos"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:179
+msgid "Sí"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:179
+msgid "No"
+msgstr ""
+
+#: notificador/ui/subscriptions_dialog.py:241
+#, python-brace-format
+msgid "¿Eliminar la suscripción a {name}? También puedes borrar las notificaciones guardadas de este tema."
+msgstr ""
+
+#: notificador/ui/tray.py:29
+msgid "&Ocultar ventana"
+msgstr ""
+
+#: notificador/ui/tray.py:29
+msgid "&Mostrar ventana"
+msgstr ""
+
+#: notificador/ui/tray.py:32
+msgid "&Publicar notificación…"
+msgstr ""
+
+#: notificador/ui/tray.py:33
+msgid "&Reconectar"
+msgstr ""
+
+#: notificador/ui/tray.py:35
+msgid "&Salir"
+msgstr ""
+
+#: notificador/ui/tray.py:21
+#, python-brace-format
+msgid "{name}: {n} sin leer"
+msgstr ""

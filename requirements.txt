@@ -1,0 +1,8 @@
+wxPython
+websockets
+requests
+cryptography
+windows-toasts
+emoji
+pyinstaller
+pytest
